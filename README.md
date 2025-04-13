@@ -146,7 +146,7 @@ Workflows are made up of modular **tasks**, each with a corresponding **executor
 | Task | Description |
 |------|-------------|
 | [**SmartContractInteraction**](./client/lib/workflow/task/SmartContractInteractionTask.tsx) | Invokes a contract method on-chain (e.g. send tx or read). |
-| [**AgentKitSwap**](./client/lib/workflow/task/AgentKitSwapTask.tsx) | Swaps tokens using Coinbase’s AgentKit (via smart contract). |
+
 
 
 Each task can be dragged into a workflow, connected with inputs/outputs, and executed manually or on a schedule. You can pass in dynamic parameters or link them to stored credentials.
