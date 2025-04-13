@@ -1,7 +1,7 @@
 
-# 🌐 Tawzi – Visual AI & Web3 Workflows, Made Simple
+# 🌐 Twazi – Visual AI & Web3 Workflows, Made Simple
 
-**Tawzi** is a next-generation platform for designing and executing AI-powered workflows that integrate seamlessly with Web3 technologies. Built with a visual-first experience, Tawzi lets users automate complex actions—like token swaps, smart contract interactions, data scraping, and AI-based reasoning—without writing a single line of backend code.
+**Twazi** is a next-generation platform for designing and executing AI-powered workflows that integrate seamlessly with Web3 technologies. Built with a visual-first experience, Tawzi lets users automate complex actions—like token swaps, smart contract interactions, data scraping, and AI-based reasoning—without writing a single line of backend code.
 
 Whether you're building decentralized apps, processing data with LLMs, or storing insights on Filecoin, Tawzi gives you the tools to **create, connect, and automate** everything in one place.
 
@@ -123,31 +123,32 @@ The platform ensures all sensitive information like API keys, private keys, and 
 
 Workflows are made up of modular **tasks**, each with a corresponding **executor**. These executors define how the task is run, often using AI or interacting with APIs/blockchains.
 
+
 ### 🧠 AI & Browser Tasks
 
 | Task | Description |
 |------|-------------|
-| **LaunchBrowser** | Opens a headless Chromium instance using Puppeteer. |
-| **PageToHtml** | Converts the loaded browser page into raw HTML. |
-| **ExtractTextFromElement** | Extracts inner text from a selected DOM element (CSS selector). |
-| **ExtractDataWithAI** | Parses HTML or text using OpenAI to extract structured data. |
-| **ReasoningLLM** | Performs general-purpose AI reasoning using OpenAI/Groq/etc. |
+| [**LaunchBrowser**](./client/lib/workflow/task/LaunchBrowser.tsx) | Opens a headless Chromium instance using Puppeteer. |
+| [**PageToHtml**](./client/lib/workflow/task/PageToHtml.tsx) | Converts the loaded browser page into raw HTML. |
+| [**ExtractTextFromElement**](./client/lib/workflow/task/ExtractTextFromElement.tsx) | Extracts inner text from a selected DOM element (CSS selector). |
+| [**ExtractDataWithAI**](./client/lib/workflow/task/ExtractDataWithAI.tsx) | Parses HTML or text using OpenAI to extract structured data. |
+| [**ReasoningLLM**](./client/lib/workflow/task/ReasoningLLMTask.tsx) | Performs general-purpose AI reasoning using OpenAI/Groq/etc. |
 
 ### 🔐 Credential & Storage Tasks
 
 | Task | Description |
 |------|-------------|
-| **CreateRecallBucket** | Creates a Recall storage bucket to persist AI output. |
-| **StoreAIOutputInBucket** | Saves extracted or generated data into a Recall bucket. |
+| [**CreateRecallBucket**](./client/lib/workflow/task/CreateRecallBucketTask.tsx) | Creates a Filecoin storage bucket to persist AI output. |
+| [**StoreAIOutputInBucket**](./client/lib/workflow/task/StoreAIOutputInBucketTask.tsx) | Saves extracted or generated data into a Recall bucket. |
 
 ### 🔄 Web3 & Automation Tasks
 
 | Task | Description |
 |------|-------------|
-| **SmartContractInteraction** | Invokes a contract method on-chain (e.g. send tx or read). |
+| [**SmartContractInteraction**](./client/lib/workflow/task/SmartContractInteractionTask.tsx) | Invokes a contract method on-chain (e.g. send tx or read). |
+| [**AgentKitSwap**](./client/lib/workflow/task/AgentKitSwapTask.tsx) | Swaps tokens using Coinbase’s AgentKit (via smart contract). |
 
 
 Each task can be dragged into a workflow, connected with inputs/outputs, and executed manually or on a schedule. You can pass in dynamic parameters or link them to stored credentials.
 
 > 🧠 Tasks are defined in `lib/workflow/task/`, while their runtime logic is implemented in `lib/workflow/executor/`.
-
